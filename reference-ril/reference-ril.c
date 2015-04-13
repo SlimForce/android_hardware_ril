@@ -916,7 +916,7 @@ static void requestSetPreferredNetworkType( int request __unused, void *data,
     int err;
     int32_t preferred = net2pmask[value];
 
-    RLOGD("requestSetPreferredNetworkType: current: %x. New: %x", PREFERRED_NETWORK(sMdmInfo), preferred);
+    RLOGD("requestSetPreferredNetworkType: value(%d) current(%x) New(%x)", value, PREFERRED_NETWORK(sMdmInfo), preferred);
     if (!networkModePossible(sMdmInfo, value)) {
         RIL_onRequestComplete(t, RIL_E_MODE_NOT_SUPPORTED, NULL, 0);
         return;
